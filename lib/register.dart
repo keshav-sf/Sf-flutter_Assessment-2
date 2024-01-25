@@ -1,5 +1,6 @@
+// ignore_for_file: body_might_complete_normally_nullable, unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
-import 'package:sf_assessment2/login.dart';
 import 'package:sf_assessment2/user.dart';
 
 class Register extends StatefulWidget {
@@ -21,25 +22,43 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(200),
-          child: AppBar(
-            foregroundColor: Colors.white,
-            backgroundColor: const Color.fromARGB(255, 96, 5, 55),
-            title: const Column(children: [
-              // SizedBox(
-              //   height: 20,
-              // ),
-              Text(
-                "Register",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "Create your account",
-                style: TextStyle(fontSize: 15),
-              ),
-            ]),
+        appBar: AppBar(
+          leadingWidth: double.infinity,
+          leading: const Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                // IconButton(
+                //   onPressed: () {
+                //     Navigator.pop(context);
+                //   },
+                //   icon: const Icon(Icons.arrow_back_ios),
+                // ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Register",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "Create your account",
+                  style: TextStyle(fontSize: 15),
+                ),
+              ],
+            ),
           ),
+          // toolbarHeight: 160,
+          toolbarHeight: 100,
+          foregroundColor: Colors.white,
+          backgroundColor: const Color.fromARGB(255, 96, 5, 55),
         ),
         body: Form(
           key: _formKey,
@@ -125,7 +144,7 @@ class _RegisterState extends State<Register> {
                       } else if (!RegExp(
                               r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
                           .hasMatch(value)) {
-                        return "Password Should Contain 7 Letters, \nUpper case, Lower case,Number and\nSpecial Character( ! @ # \$ & * ~ )";
+                        return "Password Should Contain 8 Letters, \nUpper case, Lower case,Number and\nSpecial Character( ! @ # \$ & * ~ )";
                       }
                     },
                   ),

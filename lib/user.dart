@@ -7,9 +7,10 @@ class UserAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 96, 5, 55),
+          automaticallyImplyLeading: false,
+          backgroundColor: const Color.fromARGB(255, 96, 5, 55),
           foregroundColor: Colors.white,
-          title: Text("User Account")),
+          title: const Text("User Account")),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -18,7 +19,7 @@ class UserAccount extends StatelessWidget {
               "Welcome",
               style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             FilledButton(
